@@ -6,23 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Research portfolio of Fernando Tuya, Associate Professor and head of the Biodiversity and Conservation (BIOCON) group at IU-ECOAQUA, ULPGC."
+    content="Academic webpage of Fernando Tuya, Associate Professor and head of the Biodiversity and Conservation (BIOCON) group at IU-ECOAQUA, ULPGC."
   />
   <style>
     :root {
-      --bg: #020617;
-      --bg2: #020617;
-      --surface: #020617;
-      --accent: #22c55e;
-      --accent-soft: rgba(34, 197, 94, 0.12);
-      --accent-strong: rgba(34, 197, 94, 0.25);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --radius-lg: 18px;
-      --radius-xl: 26px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.8);
-      --shadow-subtle: 0 10px 32px rgba(15, 23, 42, 0.8);
+      --bg: #f3f4f6;
+      --bg-alt: #ffffff;
+      --accent: #15803d;
+      --accent-soft: #dcfce7;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --radius-lg: 16px;
+      --radius-xl: 22px;
     }
 
     * {
@@ -32,406 +29,335 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #020617 0, #000 60%);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.7;
-      padding: 26px 16px 60px;
+      padding: 24px 14px 48px;
     }
 
     .page {
-      max-width: 1120px;
+      max-width: 950px;
       margin: 0 auto;
     }
 
-    /* Top navigation */
-    .nav {
+    /* Top bar */
+    .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      gap: 12px;
+      font-size: 14px;
     }
 
-    .nav-left {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 15px;
-      letter-spacing: 0.18em;
+      gap: 8px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
+      font-size: 13px;
     }
 
-    .nav-dot {
+    .brand-dot {
       width: 10px;
       height: 10px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #bbf7d0, #22c55e);
-      box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+      background: radial-gradient(circle at 30% 30%, #bbf7d0, var(--accent));
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 6px;
       font-size: 13px;
     }
 
     .nav-links a {
-      padding: 5px 10px;
+      padding: 4px 9px;
       border-radius: 999px;
-      border: 1px solid transparent;
       text-decoration: none;
       color: var(--muted);
-      cursor: pointer;
+      border: 1px solid transparent;
     }
 
     .nav-links a:hover {
-      border-color: rgba(148, 163, 184, 0.4);
-      color: var(--text);
-      background: rgba(15, 23, 42, 0.8);
+      border-color: #d1d5db;
+      background: #f9fafb;
+      color: #111827;
     }
 
-    /* Hero / front page */
-    header {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      padding: 22px;
-      padding-bottom: 20px;
+    /* Hero card */
+    .hero {
+      background: var(--bg-alt);
       border-radius: var(--radius-xl);
-      background: radial-gradient(circle at top left, #020617 0, #020617 60%);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      position: relative;
-      overflow: hidden;
+      padding: 20px 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.2fr);
+      gap: 18px;
+      margin-bottom: 20px;
     }
 
-    header::before {
-      content: "";
-      position: absolute;
-      inset: -20%;
-      background:
-        radial-gradient(circle at 7% 0, rgba(56, 189, 248, 0.12) 0, transparent 55%),
-        radial-gradient(circle at 95% 0, rgba(34, 197, 94, 0.13) 0, transparent 55%);
-      opacity: 0.9;
-      pointer-events: none;
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      body {
+        padding: 18px 10px 36px;
+      }
     }
 
-    .header-main,
-    .header-meta {
-      position: relative;
-      z-index: 1;
+    .hero-main {
+      display: flex;
+      gap: 16px;
     }
 
     .avatar {
-      width: 90px;
-      height: 90px;
+      width: 76px;
+      height: 76px;
       border-radius: 999px;
-      background: conic-gradient(from 210deg, #22c55e, #22c55e, #06b6d4, #22c55e);
+      background: var(--accent-soft);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 20px 40px rgba(21, 128, 61, 0.95);
-    }
-
-    .avatar-inner {
-      width: 80px;
-      height: 80px;
-      border-radius: inherit;
-      background: radial-gradient(circle at 20% 0, #0f172a, #020617);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
+      border: 1px solid #bbf7d0;
       font-weight: 700;
-      color: #e5e7eb;
-      letter-spacing: 0.14em;
+      color: var(--accent);
     }
 
-    .header-main {
-      flex: 1.6;
-      min-width: 260px;
+    .hero-text {
+      flex: 1;
     }
 
     .name {
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 700;
-      letter-spacing: 0.02em;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
-    .role-line {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 4px;
+    .role {
       font-size: 14px;
       color: var(--muted);
-    }
-
-    .pill-main {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      padding: 4px 11px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.8);
-      color: var(--muted);
+      margin-bottom: 4px;
     }
 
     .affiliation {
       font-size: 13px;
-      color: #cbd5f5;
-      margin-top: 2px;
+      color: #4b5563;
+      margin-bottom: 8px;
     }
 
     .affiliation a {
-      color: #a5f3fc;
+      color: #0369a1;
       text-decoration: none;
     }
-
-    .affiliation a:hover {
-      text-decoration: underline;
-    }
+    .affiliation a:hover { text-decoration: underline; }
 
     .tagline {
       font-size: 14px;
-      color: #d1fae5;
-      max-width: 640px;
-      margin-top: 8px;
+      color: #111827;
     }
 
     .tagline strong {
-      color: #bbf7d0;
+      color: var(--accent);
       font-weight: 600;
     }
 
-    .header-meta {
-      flex: 1.1;
-      min-width: 220px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .hero-side {
+      border-left: 1px solid var(--border);
+      padding-left: 16px;
       font-size: 13px;
     }
 
-    .meta-block {
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31, 41, 55, 0.96);
-      padding: 9px 10px;
+    @media (max-width: 800px) {
+      .hero-side {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+        padding-top: 12px;
+        margin-top: 4px;
+      }
     }
 
-    .meta-title {
-      font-size: 11px;
+    .hero-side-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .contact-row {
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .contact-label {
+      color: var(--muted);
+    }
+
+    .contact-value {
+      text-align: right;
+    }
+
+    .contact-value a {
+      color: #0369a1;
+      text-decoration: none;
+    }
+    .contact-value a:hover { text-decoration: underline; }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .social-chip {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f9fafb;
+    }
+
+    .social-chip a {
+      color: #0369a1;
+      text-decoration: none;
+    }
+    .social-chip a:hover { text-decoration: underline; }
+
+    /* Sections */
+    section {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 14px 18px 16px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--muted);
       margin-bottom: 4px;
     }
 
-    .meta-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .meta-label {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .meta-value {
-      text-align: right;
-      font-size: 13px;
-    }
-
-    .social-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .social-chip {
+    .node-label {
       font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .social-chip a {
-      text-decoration: none;
-      color: #a5f3fc;
-    }
-
-    .social-chip a:hover {
-      text-decoration: underline;
-    }
-
-    a {
-      color: #a5f3fc;
-    }
-
-    main {
-      margin-top: 24px;
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.1fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 880px) {
-      main {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      body {
-        padding: 20px 14px 40px;
-      }
-    }
-
-    section {
-      background: radial-gradient(circle at top left, #020617 0, #020617 70%);
-      border-radius: var(--radius-xl);
-      padding: 16px 18px 18px;
-      border: 1px solid rgba(31, 41, 55, 0.96);
-      box-shadow: var(--shadow-subtle);
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--muted);
-      margin-bottom: 8px;
+      letter-spacing: 0.18em;
+      color: #9ca3af;
+      margin-bottom: 2px;
     }
 
     .section-subtitle {
       font-size: 13px;
       color: var(--muted);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    .node-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: rgba(148, 163, 184, 0.9);
-      margin-bottom: 4px;
-      opacity: 0.9;
+    p {
+      font-size: 13px;
+      color: #111827;
     }
 
-    /* Node 1: positions & education */
+    /* Timeline list (positions) */
     .timeline {
       list-style: none;
       font-size: 13px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+      padding-left: 0;
+      margin-top: 4px;
     }
 
-    .timeline li::before {
-      content: "• ";
-      color: var(--accent);
+    .timeline li {
+      margin-bottom: 4px;
     }
 
-    /* Node 2: research interests */
+    /* Pill row (interests) */
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-bottom: 8px;
+      margin: 6px 0 8px;
     }
 
     .pill {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      padding: 3px 9px;
+      padding: 3px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      border: 1px solid var(--border);
       color: var(--muted);
+      background: #f9fafb;
     }
 
-    /* Node 3 & 4 small cards/grid */
+    /* Grid cards (dissemination, projects) */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 10px;
+      margin-top: 6px;
     }
 
     .card-sm {
-      background: radial-gradient(circle at top left, #020617 0, #020617 75%);
-      border-radius: var(--radius-lg);
-      padding: 9px 10px;
-      border: 1px solid rgba(31, 41, 55, 0.98);
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      padding: 8px 10px;
       font-size: 12px;
     }
 
-    .card-sm-title {
-      font-weight: 500;
+    .card-title {
+      font-weight: 600;
       margin-bottom: 3px;
+      color: #111827;
     }
 
-    .card-sm-meta {
+    .card-meta {
+      font-size: 12px;
       color: var(--muted);
-      font-size: 11px;
     }
 
-    /* Node 5: publications */
+    /* Publications list */
     .pub-list {
       list-style: none;
+      padding-left: 0;
+      font-size: 13px;
       display: flex;
       flex-direction: column;
-      gap: 9px;
-      margin-top: 4px;
-      font-size: 13px;
+      gap: 6px;
     }
 
     .pub-item {
-      padding: 9px 10px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31, 41, 55, 0.96);
-      background: radial-gradient(circle at top left, #020617 0, #020617 70%);
+      padding: 6px 8px;
+      border-radius: 10px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
     }
 
     .pub-title {
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
-    .pub-authors {
-      font-size: 12px;
-      color: var(--muted);
+      font-weight: 600;
     }
 
     .pub-meta {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-
-    /* Node 6: projects */
-    .project-name {
-      font-weight: 500;
-      margin-bottom: 3px;
-    }
-
-    .project-meta {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--muted);
     }
 
     footer {
-      max-width: 1120px;
-      margin: 18px auto 0;
+      margin-top: 18px;
       font-size: 11px;
       color: var(--muted);
       text-align: center;
@@ -440,402 +366,368 @@
 </head>
 <body>
   <div class="page">
-    <!-- NAV with the 6 nodes -->
-    <nav class="nav">
-      <div class="nav-left">
-        <div class="nav-dot"></div>
+    <!-- Top bar with navigation -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-dot"></div>
         <span>Fernando&nbsp;Tuya</span>
       </div>
-      <div class="nav-links">
-        <a href="#front">Front page</a>
-        <a href="#positions">Positions &amp; education</a>
-        <a href="#research">Research interests</a>
-        <a href="#dissemination">Science dissemination</a>
-        <a href="#rstats">R &amp; ecological statistics</a>
+      <nav class="nav-links">
+        <a href="#top">Home</a>
+        <a href="#positions">Positions</a>
+        <a href="#research">Research</a>
+        <a href="#dissemination">Dissemination</a>
+        <a href="#rstats">R &amp; statistics</a>
         <a href="#publications">Publications</a>
-        <a href="#projects">Competitive projects</a>
-      </div>
-    </nav>
+        <a href="#projects">Projects</a>
+      </nav>
+    </div>
 
-    <!-- FRONT PAGE / merged with node 1 high-level info -->
-    <header id="front">
-      <div class="avatar">
-        <div class="avatar-inner">FT</div>
-      </div>
-
-      <div class="header-main">
-        <div class="name">Fernando Tuya</div>
-        <div class="role-line">
-          <span>Associate Professor (“Profesor Titular”)</span>
-          <span class="pill-main">Biodiversity &amp; conservation</span>
-        </div>
-        <p class="affiliation">
-          Head of the <strong>Biodiversity and Conservation (BIOCON)</strong> group,<br />
-          IU-ECOAQUA, University of Las Palmas de Gran Canaria, Canary Islands, Spain.<br />
-          <a href="https://www.ecoaqua.eu/es/biocon.html" target="_blank" rel="noreferrer">
-            BIOCON @ IU-ECOAQUA
-          </a>
-        </p>
-        <p class="tagline">
-          Coastal community ecologist working across the globe’s oceans, with a particular
-          interest in <strong>nearshore habitats underpinned by foundation species</strong>
-          such as seagrasses, macroalgae and rhodoliths, and a strong focus on
-          <strong>macroecology, biogeography</strong> and the
-          <strong>sustainable management of marine ecosystems</strong>.
-        </p>
-      </div>
-
-      <div class="header-meta">
-        <div class="meta-block">
-          <div class="meta-title">Contact</div>
-          <div class="meta-item">
-            <span class="meta-label">Office</span>
-            <span class="meta-value">+34 928 457 279</span>
+    <!-- Hero / front page -->
+    <header id="top" class="hero">
+      <div class="hero-main">
+        <div class="avatar">FT</div>
+        <div class="hero-text">
+          <div class="name">Fernando Tuya</div>
+          <div class="role">Associate Professor (“Profesor Titular”)</div>
+          <div class="affiliation">
+            Head of the <strong>Biodiversity and Conservation (BIOCON)</strong> group,
+            IU-ECOAQUA, University of Las Palmas de Gran Canaria (ULPGC), Canary Islands, Spain.<br />
+            <a href="https://www.ecoaqua.eu/es/biocon.html" target="_blank" rel="noreferrer">
+              BIOCON @ IU-ECOAQUA
+            </a>
           </div>
-          <div class="meta-item">
-            <span class="meta-label">Mobile</span>
-            <span class="meta-value">+34 637 104 279</span>
-          </div>
-          <div class="meta-item" style="margin-top: 4px;">
-            <span class="meta-label">E-mail</span>
-            <span class="meta-value">
-              <a href="mailto:fernando.tuya@ulpgc.es">fernando.tuya@ulpgc.es</a>
-            </span>
-          </div>
-        </div>
-
-        <div class="meta-block">
-          <div class="meta-title">Links</div>
-          <div class="social-row">
-            <span class="social-chip">
-              <a href="https://scholar.google.es/citations?user=hR-UhV8AAAAJ&hl=es" target="_blank" rel="noreferrer">
-                Google Scholar
-              </a>
-            </span>
-            <span class="social-chip">
-              <a href="https://www.researchgate.net/profile/Fernando-Tuya" target="_blank" rel="noreferrer">
-                ResearchGate
-              </a>
-            </span>
-            <span class="social-chip">
-              <a href="https://github.com/ftuya" target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-            </span>
-            <span class="social-chip">
-              <a href="https://www.youtube.com/@fernandotuya4499" target="_blank" rel="noreferrer">
-                YouTube
-              </a>
-            </span>
-            <span class="social-chip">
-              <a href="https://www.instagram.com/fernando_tuya/" target="_blank" rel="noreferrer">
-                Instagram
-              </a>
-            </span>
-          </div>
+          <p class="tagline">
+            Coastal community ecologist working across the globe’s oceans, particularly
+            on <strong>nearshore habitats underpinned by foundation species</strong>
+            (seagrasses, macroalgae, rhodoliths) and on
+            <strong>macroecology, biogeography</strong> and the
+            <strong>sustainable management of marine ecosystems</strong>.
+          </p>
         </div>
       </div>
+
+      <aside class="hero-side">
+        <div class="hero-side-title">Contact</div>
+        <div class="contact-row">
+          <span class="contact-label">Office</span>
+          <span class="contact-value">+34 928 457 279</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Mobile</span>
+          <span class="contact-value">+34 637 104 279</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">E-mail</span>
+          <span class="contact-value">
+            <a href="mailto:fernando.tuya@ulpgc.es">fernando.tuya@ulpgc.es</a>
+          </span>
+        </div>
+
+        <div class="hero-side-title" style="margin-top: 10px;">Profiles</div>
+        <div class="social-row">
+          <span class="social-chip">
+            <a href="https://scholar.google.es/citations?user=hR-UhV8AAAAJ&hl=es" target="_blank" rel="noreferrer">
+              Google Scholar
+            </a>
+          </span>
+          <span class="social-chip">
+            <a href="https://www.researchgate.net/profile/Fernando-Tuya" target="_blank" rel="noreferrer">
+              ResearchGate
+            </a>
+          </span>
+          <span class="social-chip">
+            <a href="https://github.com/ftuya" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          </span>
+          <span class="social-chip">
+            <a href="https://www.youtube.com/@fernandotuya4499" target="_blank" rel="noreferrer">
+              YouTube
+            </a>
+          </span>
+          <span class="social-chip">
+            <a href="https://www.instagram.com/fernando_tuya/" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+          </span>
+        </div>
+      </aside>
     </header>
 
-    <main>
-      <!-- LEFT COLUMN -->
-      <div>
-        <!-- NODE 1: positions & education -->
-        <section id="positions">
-          <div class="node-label">Node 1</div>
-          <h2>Positions &amp; Education</h2>
-          <p class="section-subtitle">
-            Career trajectory and academic background. (Structure loosely inspired by Oskar Hagen’s layout.)
-          </p>
-          <ul class="timeline">
-            <li>Associate Professor, University of Las Palmas de G.C., 2016 – nowadays.</li>
-            <li>“Ramón y Cajal” tenure-track position, University of Las Palmas de G.C., 2010 – 2015.</li>
-            <li>Auxiliar investigator, CIIMAR, University of Porto, Portugal, 2009 – 2010.</li>
-            <li>Postdoctoral Research Fellow, Edith Cowan University, Australia, 2006 – 2008.</li>
-            <li>Postdoctoral Researcher, ICCM, Spain, 2003 – 2005.</li>
-            <li>PhD in Marine Sciences (Extraordinary Award), University of Las Palmas de G.C., July 2002.</li>
-          </ul>
-        </section>
+    <!-- Node 1: Positions & education -->
+    <section id="positions">
+      <div class="node-label">Node 1</div>
+      <h2>Positions &amp; Education</h2>
+      <p class="section-subtitle">
+        Academic career and main appointments.
+      </p>
+      <ul class="timeline">
+        <li>Associate Professor, University of Las Palmas de G.C., 2016 – present.</li>
+        <li>“Ramón y Cajal” tenure-track position, University of Las Palmas de G.C., 2010 – 2015.</li>
+        <li>Auxiliar investigator, CIIMAR, University of Porto, Portugal, 2009 – 2010.</li>
+        <li>Postdoctoral Research Fellow, Edith Cowan University, Australia, 2006 – 2008.</li>
+        <li>Postdoctoral Researcher, ICCM, Spain, 2003 – 2005.</li>
+        <li>PhD in Marine Sciences (Extraordinary Award), University of Las Palmas de G.C., July 2002.</li>
+      </ul>
+    </section>
 
-        <!-- NODE 2: research interests -->
-        <section id="research">
-          <div class="node-label">Node 2</div>
-          <h2>Research Interests</h2>
-          <p class="section-subtitle">
-            Coastal community ecology across the globe’s oceans, with emphasis on habitats
-            underpinned by foundation species.
-          </p>
+    <!-- Node 2: Research interests -->
+    <section id="research">
+      <div class="node-label">Node 2</div>
+      <h2>Research Interests</h2>
+      <p class="section-subtitle">
+        Coastal community ecology, foundation species and large-scale patterns in marine ecosystems.
+      </p>
 
-          <div class="pill-row">
-            <span class="pill">Coastal community ecology</span>
-            <span class="pill">Foundation species</span>
-            <span class="pill">Seagrasses</span>
-            <span class="pill">Macroalgae</span>
-            <span class="pill">Rhodoliths</span>
-            <span class="pill">Macroecology</span>
-            <span class="pill">Biogeography</span>
-            <span class="pill">Ecosystem functioning</span>
-            <span class="pill">Conservation</span>
-          </div>
-
-          <p style="font-size: 13px;">
-            My research is motivated by the necessity of pursuing models that explain
-            patterns of organization and functioning of marine biota across scales of
-            space, time and taxonomy, with a particular interest on those nearshore
-            habitats underpinned by ‘foundation’ species, particularly seagrasses and
-            macroalgae (e.g., brown seaweeds), including a recent interest on rhodoliths.
-          </p>
-          <p style="font-size: 13px; margin-top: 6px;">
-            I aim to connect responses from physiological, to population and ecosystem
-            levels, with a larger attention on ecological patterns and processes at large
-            scales. This has taken my current attention to marine macroecology and
-            biogeography. I hope to transfer ecological knowledge to the sustainable
-            management of marine ecosystems to promote conservation of the marine realm.
-          </p>
-        </section>
-
-        <!-- NODE 3: science dissemination -->
-        <section id="dissemination">
-          <div class="node-label">Node 3</div>
-          <h2>Science Dissemination</h2>
-          <p class="section-subtitle">
-            Popular science materials on marine biodiversity of the Canary Islands and Macaronesia.
-          </p>
-
-          <p style="font-size: 13px;">
-            I aim to transfer knowledge on marine biodiversity of the Canary Islands and
-            Macaronesia to the general public by means of the publication of popular books
-            and booklets on a range of topics, from guides to species description and
-            identification to understanding the basic biology of nearshore habitats.
-          </p>
-
-          <div class="grid" style="margin-top: 10px;">
-            <div class="card-sm">
-              <div class="card-sm-title">Books and booklets</div>
-              <div class="card-sm-meta">
-                Links to the seller (Oceanográfica) and other outlets for printed material.
-                <br /><br />
-                <!-- Add real links here -->
-                <em>Example:</em> <a href="#" target="_blank" rel="noreferrer">Book title – Oceanográfica</a>
-              </div>
-            </div>
-
-            <div class="card-sm">
-              <div class="card-sm-title">Monographs &amp; PDFs</div>
-              <div class="card-sm-meta">
-                Free monographs and educational materials, available as PDF downloads.
-                <br /><br />
-                <!-- Add real links here -->
-                <em>Example:</em> <a href="#" target="_blank" rel="noreferrer">Species guide (PDF)</a>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div class="pill-row">
+        <span class="pill">Coastal community ecology</span>
+        <span class="pill">Foundation species</span>
+        <span class="pill">Seagrasses</span>
+        <span class="pill">Macroalgae</span>
+        <span class="pill">Rhodoliths</span>
+        <span class="pill">Macroecology</span>
+        <span class="pill">Biogeography</span>
+        <span class="pill">Ecosystem functioning</span>
+        <span class="pill">Conservation</span>
       </div>
 
-      <!-- RIGHT COLUMN -->
-      <div>
-        <!-- NODE 4: R and ecological stats -->
-        <section id="rstats">
-          <div class="node-label">Node 4</div>
-          <h2>Ecological Statistics &amp; R</h2>
-          <p class="section-subtitle">
-            Dissemination of ecological statistics and the R environment through open tutorials (in Spanish).
-          </p>
+      <p>
+        My research is motivated by the necessity of pursuing models that explain patterns
+        of organization and functioning of marine biota across scales of space, time and
+        taxonomy, with a particular interest on nearshore habitats underpinned by
+        foundation species, particularly seagrasses and macroalgae (e.g. brown seaweeds),
+        and, more recently, rhodoliths.
+      </p>
+      <p style="margin-top: 6px;">
+        I aim to connect responses from physiological, population and ecosystem levels,
+        with a strong focus on ecological patterns and processes at large scales. This has
+        led to a growing emphasis on marine macroecology and biogeography, with the goal
+        of transferring ecological knowledge to the sustainable management and conservation
+        of marine ecosystems.
+      </p>
+    </section>
 
-          <p style="font-size: 13px;">
-            I am a devoted supporter of the R programming language and I freely provide
-            tutorials (in Spanish) on a wide range of statistical routines applied to
-            environmental sciences using my YouTube channel.
-          </p>
+    <!-- Node 3: Science dissemination -->
+    <section id="dissemination">
+      <div class="node-label">Node 3</div>
+      <h2>Science Dissemination</h2>
+      <p class="section-subtitle">
+        Popular science materials on the marine biodiversity of the Canary Islands and Macaronesia.
+      </p>
 
-          <div class="card-sm" style="margin-top: 10px;">
-            <div class="card-sm-title">YouTube channel</div>
-            <div class="card-sm-meta">
-              Tutorials on statistical analyses, ecological data workflows and the use of
-              R for environmental sciences.
-              <br /><br />
-              <a href="https://www.youtube.com/@fernandotuya4499" target="_blank" rel="noreferrer">
-                Visit the channel
-              </a>
-            </div>
+      <p>
+        I seek to transfer knowledge on marine biodiversity of the Canary Islands and
+        Macaronesia to the wider public through popular books and booklets, covering topics
+        such as species identification and the basic ecology of nearshore habitats.
+      </p>
+
+      <div class="grid">
+        <div class="card-sm">
+          <div class="card-title">Books &amp; booklets</div>
+          <div class="card-meta">
+            Printed materials (e.g. field guides and illustrated books) aimed at making
+            marine biodiversity accessible to non-specialists.<br /><br />
+            <!-- Replace # with real links as desired -->
+            <em>Examples and links to sellers can be added here.</em>
           </div>
-        </section>
-
-        <!-- NODE 5: selected publications -->
-        <section id="publications">
-          <div class="node-label">Node 5</div>
-          <h2>Scientific Publications</h2>
-          <p class="section-subtitle">
-            Selected papers (last 6 years) with priority (first/last) authorships.
-            For the full list, see Google Scholar and ResearchGate.
-          </p>
-
-          <ul class="pub-list">
-            <li class="pub-item">
-              <div class="pub-title">
-                Biogeography modulates seagrass resistance to small-scale perturbations.
-              </div>
-              <div class="pub-authors">
-                Tuya, F. <em>et al.</em> 2019. <em>Journal of Ecology</em> 107: 1263–1275.
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                Long-term seagrass degradation: Integrating landscape, demographic, and genetic responses.
-              </div>
-              <div class="pub-authors">
-                Manent, P., …, &amp; Tuya, F. 2020. <em>Aquatic Conservation: Marine and Freshwater Ecosystems</em>.
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                Partitioning resilience of a marine foundation species into resistance and recovery trajectories.
-              </div>
-              <div class="pub-authors">
-                Tuya, F. <em>et al.</em> 2021. <em>Oecologia</em> 196: 515–527.
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                Niche and neutral assembly mechanisms contribute to latitudinal diversity gradients in reef fishes.
-              </div>
-              <div class="pub-authors">
-                Bosch, N.E., …, &amp; Tuya, F. 2021. <em>Journal of Biogeography</em> 48: 2683–2698.
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                Driving factors of biogeographical variation in seagrass herbivory.
-              </div>
-              <div class="pub-authors">
-                Martínez-Crego, B., …, &amp; Tuya, F. 2021. <em>Science of the Total Environment</em> 758: 143756.
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                Coastal sharks and rays in the Northeastern Atlantic: From an urgent call to collect more data to the declaration of a marine corridor.
-              </div>
-              <div class="pub-authors">
-                Tuya, F. <em>et al.</em> 2022. <em>Global Ecology and Conservation</em> 38: e02261.
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                Levelling-up rhodolith-bed science to address global-scale conservation challenges.
-              </div>
-              <div class="pub-authors">
-                Tuya, F. <em>et al.</em> 2023. <em>Science of the Total Environment</em> 892: 164818.
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                Larger distribution ranges of seagrasses towards the equator.
-              </div>
-              <div class="pub-authors">
-                Tuya, F. <em>et al.</em> 2024. <em>Journal of Biogeography</em> 51: 350–355.
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                Strong phylogenetic signal and models of trait evolution evidence phylogenetic niche conservatism for seagrasses.
-              </div>
-              <div class="pub-authors">
-                Tuya, F. <em>et al.</em> 2024. <em>Journal of Ecology</em> 112: 446–460.
-              </div>
-            </li>
-
-            <li class="pub-item">
-              <div class="pub-title">
-                Evolutionary legacies structure the geography of seagrass traits across the world’s oceans.
-              </div>
-              <div class="pub-authors">
-                Bosch, N.E., …, Tuya, F. 2025. <em>New Phytologist</em>, doi: 10.1111/nph.70769.
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <!-- NODE 6: competitive projects as PI -->
-        <section id="projects">
-          <div class="node-label">Node 6</div>
-          <h2>Competitive Projects as PI</h2>
-          <p class="section-subtitle">
-            Selected competitive research projects led as Principal Investigator.
-          </p>
-
-          <div class="grid">
-            <div class="card-sm">
-              <div class="project-name">PINKCARBON</div>
-              <div class="project-meta">
-                <strong>Title:</strong> Unravelling the context-dependency of rhodolith bottoms as blue (but pink)
-                carbon habitats.<br />
-                <strong>Funding:</strong> Ministerio de Ciencia e Innovación (Proyectos Generación de Conocimiento).
-              </div>
-            </div>
-
-            <div class="card-sm">
-              <div class="project-name">POPCORN</div>
-              <div class="project-meta">
-                <strong>Title:</strong> Composition, distribution and supply of ecosystem services and resilience of
-                rhodolith beds across an oceanic archipelago.<br />
-                <strong>Funding:</strong> Ministerio de Ciencia e Innovación (Proyectos Generación de Conocimiento).
-              </div>
-            </div>
-
-            <div class="card-sm">
-              <div class="project-name">METOSERECO</div>
-              <div class="project-meta">
-                <strong>Title:</strong> Hacia una nueva metodología para el estudio de funciones y servicios
-                ecosistémicos de hábitats submarinos.<br />
-                <strong>Funding:</strong> Gobierno de Canarias.
-              </div>
-            </div>
-
-            <div class="card-sm">
-              <div class="project-name">RESIGRASS</div>
-              <div class="project-meta">
-                <strong>Title:</strong> Compresión holística del funcionamiento y resiliencia de una fanerógama
-                marina a perturbaciones locales: de escalas moleculares a escalas biogeográficas
-                (CGL2014-58829-C2-1-R, subprograma BOS).<br />
-                <strong>Funding:</strong> Ministerio de Economía y Competitividad (Plan Nacional).
-              </div>
-            </div>
-
-            <div class="card-sm">
-              <div class="project-name">ECOSERVEG</div>
-              <div class="project-meta">
-                <strong>Title:</strong> Changes in submersed vegetation: assessing how ecosystems services shift from
-                frondose to depauperate systems dominated by opportunistic seaweeds.<br />
-                <strong>Funding:</strong> EU (BEST call: Scheme for Biodiversity and Ecosystem Services in Territories
-                of the EU Outermost Regions and Overseas Countries and Territories).
-              </div>
-            </div>
-
-            <div class="card-sm">
-              <div class="project-name">ANTROTIDAL</div>
-              <div class="project-meta">
-                <strong>Title:</strong> Respuesta de la biota intermareal a perturbaciones humanas: efecto de la
-                eutrofización en el marco del actual contexto climático (CGL2011-23833, subprograma BOS).<br />
-                <strong>Funding:</strong> Ministerio de Ciencia e Innovación.
-              </div>
-            </div>
+        </div>
+        <div class="card-sm">
+          <div class="card-title">Monographs &amp; PDFs</div>
+          <div class="card-meta">
+            Free monographs and educational materials in PDF format that support teaching
+            and outreach activities.<br /><br />
+            <em>Links to downloadable PDFs can be listed here.</em>
           </div>
-        </section>
+        </div>
       </div>
-    </main>
+    </section>
+
+    <!-- Node 4: R & ecological statistics -->
+    <section id="rstats">
+      <div class="node-label">Node 4</div>
+      <h2>Ecological Statistics &amp; R</h2>
+      <p class="section-subtitle">
+        Tutorials and resources (in Spanish) on ecological statistics using the R language.
+      </p>
+
+      <p>
+        I am a devoted supporter of the R programming language and freely provide tutorials
+        (in Spanish) on a wide range of statistical routines applied to environmental
+        sciences using my YouTube channel.
+      </p>
+
+      <div class="card-sm" style="margin-top:8px;">
+        <div class="card-title">YouTube tutorials</div>
+        <div class="card-meta">
+          Video tutorials on statistical analyses, ecological data workflows and the use of
+          R in environmental sciences.<br /><br />
+          <a href="https://www.youtube.com/@fernandotuya4499" target="_blank" rel="noreferrer">
+            Visit the YouTube channel
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Node 5: Selected publications -->
+    <section id="publications">
+      <div class="node-label">Node 5</div>
+      <h2>Selected Publications (last years)</h2>
+      <p class="section-subtitle">
+        Priority on first/last author roles. For a full list, see Google Scholar and ResearchGate.
+      </p>
+
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-title">
+            Biogeography modulates seagrass resistance to small-scale perturbations.
+          </div>
+          <div class="pub-meta">
+            Tuya, F. <em>et al.</em> 2019. <em>Journal of Ecology</em> 107: 1263–1275.
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            Long-term seagrass degradation: integrating landscape, demographic and genetic responses.
+          </div>
+          <div class="pub-meta">
+            Manent, P., …, &amp; Tuya, F. 2020.
+            <em>Aquatic Conservation: Marine and Freshwater Ecosystems</em>.
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            Partitioning resilience of a marine foundation species into resistance and recovery trajectories.
+          </div>
+          <div class="pub-meta">
+            Tuya, F. <em>et al.</em> 2021. <em>Oecologia</em> 196: 515–527.
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            Niche and neutral assembly mechanisms contribute to latitudinal diversity gradients in reef fishes.
+          </div>
+          <div class="pub-meta">
+            Bosch, N.E., …, &amp; Tuya, F. 2021. <em>Journal of Biogeography</em> 48: 2683–2698.
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            Driving factors of biogeographical variation in seagrass herbivory.
+          </div>
+          <div class="pub-meta">
+            Martínez-Crego, B., …, &amp; Tuya, F. 2021.
+            <em>Science of the Total Environment</em> 758: 143756.
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            Coastal sharks and rays in the Northeastern Atlantic: towards a marine corridor.
+          </div>
+          <div class="pub-meta">
+            Tuya, F. <em>et al.</em> 2022.
+            <em>Global Ecology and Conservation</em> 38: e02261.
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            Levelling-up rhodolith-bed science to address global-scale conservation challenges.
+          </div>
+          <div class="pub-meta">
+            Tuya, F. <em>et al.</em> 2023.
+            <em>Science of the Total Environment</em> 892: 164818.
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            Larger distribution ranges of seagrasses towards the equator.
+          </div>
+          <div class="pub-meta">
+            Tuya, F. <em>et al.</em> 2024. <em>Journal of Biogeography</em> 51: 350–355.
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            Strong phylogenetic signal and models of trait evolution evidence phylogenetic niche conservatism for seagrasses.
+          </div>
+          <div class="pub-meta">
+            Tuya, F. <em>et al.</em> 2024. <em>Journal of Ecology</em> 112: 446–460.
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-title">
+            Evolutionary legacies structure the geography of seagrass traits across the world’s oceans.
+          </div>
+          <div class="pub-meta">
+            Bosch, N.E., …, &amp; Tuya, F. 2025. <em>New Phytologist</em>, doi: 10.1111/nph.70769.
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Node 6: Competitive projects -->
+    <section id="projects">
+      <div class="node-label">Node 6</div>
+      <h2>Competitive Projects as PI</h2>
+      <p class="section-subtitle">
+        Selected competitive research projects led as Principal Investigator.
+      </p>
+
+      <div class="grid">
+        <div class="card-sm">
+          <div class="card-title">PINKCARBON</div>
+          <div class="card-meta">
+            <strong>Title:</strong> Unravelling the context-dependency of rhodolith bottoms as blue (but pink) carbon habitats.<br />
+            <strong>Funding:</strong> Ministerio de Ciencia e Innovación (Proyectos Generación de Conocimiento).
+          </div>
+        </div>
+
+        <div class="card-sm">
+          <div class="card-title">POPCORN</div>
+          <div class="card-meta">
+            <strong>Title:</strong> Composition, distribution and supply of ecosystem services and resilience of rhodolith beds across an oceanic archipelago.<br />
+            <strong>Funding:</strong> Ministerio de Ciencia e Innovación (Proyectos Generación de Conocimiento).
+          </div>
+        </div>
+
+        <div class="card-sm">
+          <div class="card-title">METOSERECO</div>
+          <div class="card-meta">
+            <strong>Title:</strong> Hacia una nueva metodología para el estudio de funciones y servicios ecosistémicos de hábitats submarinos.<br />
+            <strong>Funding:</strong> Gobierno de Canarias.
+          </div>
+        </div>
+
+        <div class="card-sm">
+          <div class="card-title">RESIGRASS</div>
+          <div class="card-meta">
+            <strong>Title:</strong> Compresión holística del funcionamiento y resiliencia de una fanerógama marina a perturbaciones locales: de escalas moleculares a escalas biogeográficas (CGL2014-58829-C2-1-R, subprograma BOS).<br />
+            <strong>Funding:</strong> Ministerio de Economía y Competitividad (Plan Nacional).
+          </div>
+        </div>
+
+        <div class="card-sm">
+          <div class="card-title">ECOSERVEG</div>
+          <div class="card-meta">
+            <strong>Title:</strong> Changes in submersed vegetation: assessing how ecosystem services shift from frondose to depauperate systems dominated by opportunistic seaweeds.<br />
+            <strong>Funding:</strong> EU (BEST call: Scheme for Biodiversity and Ecosystem Services in EU outermost regions and overseas territories).
+          </div>
+        </div>
+
+        <div class="card-sm">
+          <div class="card-title">ANTROTIDAL</div>
+          <div class="card-meta">
+            <strong>Title:</strong> Respuesta de la biota intermareal a perturbaciones humanas: efecto de la eutrofización en el marco del actual contexto climático (CGL2011-23833, subprograma BOS).<br />
+            <strong>Funding:</strong> Ministerio de Ciencia e Innovación.
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer>
-      Last updated: December 2025 · Built with plain HTML/CSS and hosted via GitHub Pages.
+      Last updated: December 2025 · Hosted with GitHub Pages.
     </footer>
   </div>
 </body>
 </html>
+
