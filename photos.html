@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fieldwork photos – Fernando Tuya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Fieldwork photos and visual documentation of research activities by Fernando Tuya."
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    :root {
+      --bg: #fafafa;
+      --bg-alt: #ffffff;
+      --accent: #15803d;
+      --accent-soft: #dcfce7;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --radius-xl: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0 14px 48px;
+    }
+
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    /* Nav bar */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 18px 0;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #bbf7d0, var(--accent));
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      padding: 4px 9px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      border-color: #d1d5db;
+      background: #f9fafb;
+      color: #111827;
+    }
+
+    .icon-links {
+      display: flex;
+      gap: 6px;
+      font-size: 16px;
+    }
+
+    .icon-links a {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      background: #f9fafb;
+      color: #374151;
+      text-decoration: none;
+    }
+
+    .icon-links a:hover {
+      background: var(--accent-soft);
+      border-color: #bbf7d0;
+      color: var(--accent);
+    }
+
+    /* Page header */
+    h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .page-intro {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    /* Gallery container */
+    .section {
+      background: var(--bg-alt);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      padding: 20px 22px;
+      margin-bottom: 22px;
+    }
+
+    .section h2 {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* Gallery grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    figure {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+    }
+
+    figure img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      font-size: 12px;
+      padding: 6px 8px;
+      background: #f9fafb;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- NAV -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-dot"></div>
+      </div>
+
+      <nav>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="projects.html">Projects</a>
+          <a href="rstats.html">R &amp; statistics</a>
+          <a href="dissemination.html">Dissemination</a>
+          <a href="photos.html" class="active">Photos</a>
+        </div>
+
+        <div class="icon-links">
+          <a href="https://scholar.google.es/citations?user=hR-UhV8AAAAJ&hl=es" target="_blank" title="Google Scholar">
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+          <a href="https://www.researchgate.net/profile/Fernando-Tuya" target="_blank" title="ResearchGate">
+            <i class="fas fa-flask"></i>
+          </a>
+          <a href="https://github.com/ftuya" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.youtube.com/@fernandotuya4499" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- HEADER -->
+    <header style="margin-bottom: 12px;">
+      <h1>Fieldwork photos</h1>
+      <p class="page-intro">
+        Selected images from field campaigns, sampling activities, and coastal ecosystems I work on.
+      </p>
+    </header>
+
+    <!-- GALLERY -->
+    <section class="section">
+      <h2>Fieldwork &amp; Research Activities</h2>
+
+      <div class="gallery-grid">
+        <figure>
+          <img src="botellas.JPG" alt="Sampling bottles and research materials" />
+          <figcaption class="gallery-caption">Sampling bottles and laboratory material.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="ciclo.jpg" alt="Conceptual research diagram" />
+          <figcaption class="gallery-caption">Conceptual diagram related to ecosystem processes.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="coleccion.JPG" alt="Collection of marine specimens" />
+          <figcaption class="gallery-caption">Collection of specimens and samples.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="coring.JPG" alt="Marine coring fieldwork" />
+          <figcaption class="gallery-caption">Coring marine sediments for ecological analysis.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="cuadrado.JPG" alt="Quadrat sampling" />
+          <figcaption class="gallery-caption">Quadrat-based sampling of benthic communities.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="jaula.JPG" alt="Experimental cage setup" />
+          <figcaption class="gallery-caption">Experimental cage to study ecological interactions.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="kelp.JPG" alt="Kelp and macroalgae habitat" />
+          <figcaption class="gallery-caption">Macroalgae / kelp habitat in coastal ecosystems.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer>
+      Last updated: December 2025 · Hosted with GitHub Pages.
+    </footer>
+  </div>
+</body>
+</html>
 
