@@ -12,45 +12,110 @@
     referrerpolicy="no-referrer"
   />
   <style>
-    :root { --bg:#f3f4f6; --bg-alt:#ffffff; --accent:#15803d; --accent-soft:#dcfce7; --text:#111827; --muted:#6b7280; --border:#e5e7eb; --radius-lg:16px; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; padding:24px 14px 48px; }
-    .page { max-width:950px; margin:0 auto; }
-    .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; gap:12px; font-size:14px; }
-    .brand { display:flex; align-items:center; gap:8px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); font-size:13px; }
-    .brand-dot { width:10px; height:10px; border-radius:999px; background:radial-gradient(circle at 30% 30%,#bbf7d0,var(--accent)); }
-    nav { display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end; }
-    .nav-links { display:flex; flex-wrap:wrap; gap:6px; font-size:13px; }
-    .nav-links a { padding:4px 9px; border-radius:999px; text-decoration:none; color:var(--muted); border:1px solid transparent; }
-    .nav-links a:hover { border-color:#d1d5db; background:#f9fafb; color:#111827; }
-    .icon-links { display:flex; gap:6px; font-size:16px; }
-    .icon-links a { width:30px; height:30px; border-radius:999px; display:flex; align-items:center; justify-content:center; border:1px solid var(--border); background:#f9fafb; color:#374151; text-decoration:none; }
-    .icon-links a:hover { background:var(--accent-soft); border-color:#bbf7d0; color:var(--accent); }
-    section { background:var(--bg-alt); border-radius:var(--radius-lg); border:1px solid var(--border); padding:16px 18px 18px; box-shadow:0 12px 30px rgba(15,23,42,0.04); }
-    h1 { font-size:22px; margin-bottom:4px; }
-    .section-subtitle { font-size:13px; color:var(--muted); margin-bottom:10px; }
-    .pub-list { list-style:none; padding-left:0; font-size:13px; display:flex; flex-direction:column; gap:6px; }
-    .pub-item { padding:6px 8px; border-radius:10px; background:#f9fafb; border:1px solid #e5e7eb; }
-    .pub-title { font-weight:600; }
-    .pub-meta { font-size:12px; color:var(--muted); }
-    footer { margin-top:18px; font-size:11px; color:var(--muted); text-align:center; }
+    :root {
+      --bg: #fafafa;
+      --bg-alt: #ffffff;
+      --accent: #15803d;
+      --accent-soft: #dcfce7;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --radius-lg: 14px;
+      --radius-xl: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0 14px 48px;
+    }
+    .page { max-width: 880px; margin: 0 auto; }
+
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin: 18px 0; gap: 12px; font-size: 14px;
+    }
+    .brand { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+    .brand-dot {
+      width: 10px; height: 10px; border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #bbf7d0, var(--accent));
+    }
+
+    nav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; }
+    .nav-links a {
+      padding: 4px 9px; border-radius: 999px; text-decoration: none;
+      color: var(--muted); border: 1px solid transparent;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      border-color: #d1d5db; background: #f9fafb; color: #111827;
+    }
+    .icon-links { display: flex; gap: 6px; font-size: 16px; }
+    .icon-links a {
+      width: 30px; height: 30px; border-radius: 999px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border); background: #f9fafb;
+      color: #374151; text-decoration: none;
+    }
+    .icon-links a:hover {
+      background: var(--accent-soft); border-color: #bbf7d0; color: var(--accent);
+    }
+
+    section {
+      background: var(--bg-alt);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      padding: 20px 22px;
+      margin-bottom: 22px;
+    }
+    h1 { font-size: 24px; margin-bottom: 4px; }
+    .section-subtitle { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+
+    .pub-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pub-item {
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+    .pub-title { font-weight: 600; margin-bottom: 2px; }
+    .pub-meta { font-size: 12px; color: var(--muted); }
+
+    footer {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <div class="page">
+    <!-- NAV -->
     <div class="topbar">
       <div class="brand">
         <div class="brand-dot"></div>
-        <span>Fernando&nbsp;Tuya</span>
       </div>
       <nav>
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="research.html">Research</a>
-          <a href="publications.html">Publications</a>
+          <a href="publications.html" class="active">Publications</a>
           <a href="projects.html">Projects</a>
           <a href="rstats.html">R &amp; statistics</a>
           <a href="dissemination.html">Dissemination</a>
+          <a href="photos.html">Photos</a>
         </div>
         <div class="icon-links">
           <a href="https://scholar.google.es/citations?user=hR-UhV8AAAAJ&hl=es" target="_blank" title="Google Scholar">
