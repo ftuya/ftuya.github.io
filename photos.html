@@ -125,4 +125,115 @@
       border: 1px solid var(--border);
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
       padding: 20px 22px;
-      margin-bottom: 22
+      margin-bottom: 22px;
+    }
+
+    .section h2 {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .photo-tile {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #f9fafb; /* light, so missing images don't look black */
+    }
+
+    .photo-tile img {
+      width: 100%;
+      height: auto;      /* let images define their own height */
+      display: block;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- NAV -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-dot"></div>
+      </div>
+
+      <nav>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="projects.html">Projects</a>
+          <a href="rstats.html">R &amp; statistics</a>
+          <a href="dissemination.html">Dissemination</a>
+          <a href="photos.html" class="active">Photos</a>
+        </div>
+
+        <div class="icon-links">
+          <a href="https://scholar.google.es/citations?user=hR-UhV8AAAAJ&hl=es" target="_blank" title="Google Scholar">
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+          <a href="https://www.researchgate.net/profile/Fernando-Tuya" target="_blank" title="ResearchGate">
+            <i class="fas fa-flask"></i>
+          </a>
+          <a href="https://github.com/ftuya" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.youtube.com/@fernandotuya4499" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- HEADER -->
+    <header style="margin-bottom: 12px;">
+      <h1>Fieldwork photos</h1>
+      <p class="page-intro">
+        Selected images from field campaigns, sampling activities, and coastal ecosystems I work on.
+      </p>
+    </header>
+
+    <!-- GALLERY -->
+    <section class="section">
+      <h2>Fieldwork &amp; research activities</h2>
+
+      <div class="gallery-grid">
+        <!-- Original 7 photos -->
+        <div class="photo-tile"><img src="botellas.JPG" alt="Fieldwork photo" /></div>
+        <div class="photo-tile"><img src="ciclo.jpg" alt="Fieldwork photo" /></div>
+        <div class="photo-tile"><img src="coleccion.JPG" alt="Fieldwork photo" /></div>
+        <div class="photo-tile"><img src="coring.JPG" alt="Fieldwork photo" /></div>
+        <div class="photo-tile"><img src="cuadrado.JPG" alt="Fieldwork photo" /></div>
+        <div class="photo-tile"><img src="jaula.JPG" alt="Fieldwork photo" /></div>
+        <div class="photo-tile"><img src="kelp.JPG" alt="Fieldwork photo" /></div>
+
+        <!-- New 4 photos -->
+        <div class="photo-tile"><img src="DSC_2784.jpg" alt="Fieldwork photo" /></div>
+        <div class="photo-tile"><img src="DSC_9312.jpg" alt="Fieldwork photo" /></div>
+        <div class="photo-tile"><img src="IMG_5501.jpg" alt="Fieldwork photo" /></div>
+        <div class="photo-tile"><img src="P8071731.JPG" alt="Fieldwork photo" /></div>
+      </div>
+    </section>
+
+    <footer>
+      Last updated: December 2025 · Hosted with GitHub Pages.
+    </footer>
+  </div>
+</body>
+</html>
+
